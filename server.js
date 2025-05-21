@@ -11,7 +11,15 @@ const cartRoutes = require("./routes/cart");
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = ["https://frontend-rosy-gamma-43.vercel.app"];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
