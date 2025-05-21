@@ -1,7 +1,4 @@
-const mongoose = require("mongoose");
-const Product = require("../models/Product");
-
-const Cart = require("../models/Cart");
+const Cart = require("../models/Cart.js");
 
 exports.addToCart = async (req, res) => {
   const userId = req.user.id;
